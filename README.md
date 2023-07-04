@@ -24,7 +24,7 @@ Run the index.html file after downloading the project or simply u can visit <a t
 
 
 ## License
-[Apache License 2.0 © Weather Me](https://github.com/subhadeep3902/Github-Profile-Searcher/blob/5ac5b4f2aeeab88e3e76c98e98d192d9d2f415d9/LICENSE)
+[Apache License 2.0 © Github Profile Searcher](https://github.com/subhadeep3902/Github-Profile-Searcher/blob/5ac5b4f2aeeab88e3e76c98e98d192d9d2f415d9/LICENSE)
 
 
 ## 🙋‍♂️ Support
