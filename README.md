@@ -1,4 +1,4 @@
-<img src="https://i.postimg.cc/mkBMRDnB/Github.jpg" height=500px align="center" style="align-items: center; margin:auto;"/>
+![](./assets/Untitled design.gif)
 
 ---
 
