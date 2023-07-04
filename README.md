@@ -2,7 +2,6 @@
 <img src="https://i.postimg.cc/mkBMRDnB/Github.jpg" height="350px" alt="github_gif"/>
 </div>
 
----
 
 <br/>
 
