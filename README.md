@@ -1,4 +1,4 @@
-![](https://i.postimg.cc/mkBMRDnB/Github.jpg)
+<img src="https://i.postimg.cc/mkBMRDnB/Github.jpg" height=300px/>
 
 ---
 
