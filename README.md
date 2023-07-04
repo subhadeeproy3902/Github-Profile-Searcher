@@ -1,4 +1,4 @@
-<img src="https://i.postimg.cc/mkBMRDnB/Github.jpg" height=300px/>
+<img src="https://i.postimg.cc/mkBMRDnB/Github.jpg" height=500px width=100%/>
 
 ---
 
