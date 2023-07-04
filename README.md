@@ -1,6 +1,4 @@
-<div align="center">
-<img src="https://i.postimg.cc/9Fkq3yF1/Untitled-design.gif" height="350px" alt="github_gif"/>
-</div>
+![](https://i.postimg.cc/9Fkq3yF1/Untitled-design.gif)
 
 ---
 
