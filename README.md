@@ -1,4 +1,4 @@
-![](./assets/Untitled design.gif)
+
 
 ---
 
