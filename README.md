@@ -24,6 +24,14 @@ Run the index.html file after downloading the project or simply u can visit <a t
 - Deployed from VERCEL
 
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. 
+
+Please make sure to update tests as appropriate.
+
+## Where to contact ?
+Contact: [subha9.5roy350@gmail.com]
+
 ## License
 [Apache License 2.0 © Github Profile Searcher](https://github.com/subhadeep3902/Github-Profile-Searcher/blob/5ac5b4f2aeeab88e3e76c98e98d192d9d2f415d9/LICENSE)
 
