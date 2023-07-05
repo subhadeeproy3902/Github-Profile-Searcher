@@ -88,6 +88,7 @@ body {
   padding: 0;
   max-width: 400px;
   margin-bottom: 1.1rem;
+  gap: 5px;
 }
 
 .user-info ul li {
