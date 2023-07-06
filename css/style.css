@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;400&display=swap");
 
 * {
+  margin: 0;
   box-sizing: border-box;
 }
 
 body {
   background-color: #1f242d;
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: "Kanit", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,10 +18,50 @@ body {
   scroll-behavior: smooth;
 }
 
-.user-form {
-  width: 100%;
-  max-width: 700px;
+:root {
+  --font-size-small: clamp(0.9rem, 2vw, 1.1rem);
+  --font-size-medium: clamp(1.1rem, 3vw, 1.5rem);
+  --font-size-large: clamp(2rem, 5vw, 3rem);
 }
+
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  
+  50% {
+    scale: 1 1.5;
+  }
+  
+  to {
+    rotate: 360deg;
+  }
+}
+
+#blob {
+  background-color: white;
+  height: 34vmax;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to right, #7fffea, #a766dd,#fffc60);
+  animation: rotate 20s infinite;
+  opacity: 0.5;
+  z-index: -2;
+}
+
+#blur {
+  height: 250vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -1;
+  backdrop-filter: blur(20vmax);
+}
+
 
 .user-form input {
   width: 100%;
@@ -28,21 +70,23 @@ body {
   border-radius: 10px;
   color: #fff;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  margin-top:clamp(1rem, 2vh, 2rem);
   font-family: inherit;
-  font-size: 1.1rem;
-  background: rgba(0, 255, 106, 0.25);
+  box-shadow: 0 3px 10px #29333294;
+  font-size: var(--font-size-small);
+  background: #1a573360;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
 .user-form input:focus {
-  background-color: #292e33;
-  box-shadow: 0 0 15px 2px #00ff6a;
+  background-color: #1a573360;
+  box-shadow: 0 0 15px #00a87093;
 }
 
 .user-form input::placeholder {
-  color: #bbb;
+  color: #b6db9e;
 }
 
 .user-form input:focus {
@@ -50,35 +94,35 @@ body {
 }
 
 .card {
-  margin-top: 3rem;
+  margin-top: clamp(2rem, 5vw, 3rem);
   max-width: 800px;
-  border-radius: 20px;
+  border-radius: clamp(10px, 3vw, 20px);
   display: flex;
-  padding: 4rem;
-  margin: 0 1.5rem;
+  padding: clamp(1rem, 3vw, 4rem);
+  margin: 0 clamp(0.5rem, 2vw, 1.5rem);
   background: rgba(163, 163, 163, 0.19);
-  border: inset 5px solid #00ff6a;
-  margin-bottom: 2rem;
-  box-shadow: inset 0 0 20px 3px #00ff6a;
+  border: inset clamp(2px, 1vw, 5px) solid #00ff6a;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  box-shadow: inset 0 0 clamp(5px, 3vw, 20px) clamp(1px, 1vw, 3px) #00ff6a;
 }
-
 
 .avatar {
   border-radius: 50%;
-        border: 5px solid #1f242d;
-        box-shadow: 0 0 10px 5px #00ff6a;
-  height: 160px;
-  width: 160px;
+  border: clamp(2px, 1vw, 5px) solid #1f242d;
+  box-shadow: 0 0 clamp(5px, 3vw, 10px) clamp(1px, 1vw, 5px) #00ff6a;
+  height: clamp(100px, 20vw, 160px);
+  width: clamp(100px, 20vw, 160px);
 }
 
 .user-info {
   color: #eee;
-  margin-left: 2.5rem;
+  margin-left: clamp(1rem, 2vw, 2.5rem);
 }
 
 .user-info h2 {
   margin-top: 0;
-  letter-spacing: 1px;
+  letter-spacing: clamp(1px, 2vw, 2px);
+  font-size: var(--font-size-large);
 }
 
 .user-info ul {
@@ -87,8 +131,7 @@ body {
   justify-content: space-between;
   padding: 0;
   max-width: 400px;
-  margin-bottom: 1.1rem;
-  gap: 5px;
+  margin-bottom: clamp(0.5rem, 2vw, 1.1rem);
 }
 
 .user-info ul li {
@@ -97,26 +140,26 @@ body {
 }
 
 .user-info ul li strong {
-  font-size: 0.9rem;
-  margin-left: 0.5rem;
-  letter-spacing: 1.5px;
+  font-size: var(--font-size-small);
+  margin-left: clamp(0.2rem, 1vw, 0.5rem);
+  letter-spacing: clamp(0.8px, 0.5vw, 1.5px);
 }
 
 .repo {
   text-decoration: none;
   color: #fff;
   background-color: #292e33;
-  font-size: 0.9rem;
-  padding: 0.25rem 0.5rem;
-  margin-right: 1rem;
-  margin-bottom: 0.9rem;
+  font-size: var(--font-size-small);
+  padding: clamp(0.2rem, 1vw, 0.25rem) clamp(0.5rem, 2vw, 0.5rem);
+  margin-right: clamp(0.5rem, 2vw, 1rem);
+  margin-bottom: clamp(0.5rem, 2vw, 0.9rem);
   display: inline-block;
-  letter-spacing: 0.8px;
-  border-radius: 5px;
+  letter-spacing: clamp(0.4px, 1vw, 0.8px);
+  border-radius: clamp(2px, 1vw, 5px);
 }
 
 .repo:hover{
-        box-shadow: 0 0 0 1px #00ff6a;
+  box-shadow: 0 0 0 1px #00ff6a;
 }
 
 @media (max-width: 420px) {
@@ -127,27 +170,32 @@ body {
   }
 
   .user-form {
-        min-width: 300px;
+    min-width: 300px;
   }
-  #image{
-        height: 200px;
+
+  #image {
+    height: 200px;
   }
+
   .avatar {
-        margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
-  .user-info{
-        margin: 0;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
+
+  .user-info {
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
-  html{
-        font-size: 90%;
+
+  html {
+    font-size: 90%;
   }
-  .user-info ul{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+
+  .user-info ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
