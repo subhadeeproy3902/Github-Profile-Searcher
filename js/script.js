@@ -1,12 +1,14 @@
 const blob = document.getElementById("blob");
+const delaytime = 3000;
+// change for delay speed
 
-window.onpointermove = event => { 
+window.onpointermove = event => {
   const { clientX, clientY } = event;
-  
+
   blob.animate({
     left: `${clientX}px`,
     top: `${clientY}px`
-  }, { duration: 3200, fill: "forwards" });
+  }, { duration: delaytime, fill: "forwards" });
 }
 const APIURL = "https://api.github.com/users/";
 
