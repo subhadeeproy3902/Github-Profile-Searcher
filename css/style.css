@@ -257,7 +257,7 @@ body {
 
 /*Footer ------------------------------------------------------------*/
 footer {
-  margin-top: 4rem;
+  margin-top: 4.5rem;
   padding: 1.5rem 10%;
   display: flex;
   align-items: center;
@@ -282,5 +282,5 @@ footer p {
 }
 
 .bx {
-  color: #00ff6a;
+  color: #1cfc79;
 }
