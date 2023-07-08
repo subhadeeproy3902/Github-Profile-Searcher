@@ -26,34 +26,32 @@ async function getRepos(username) {
     createErrorCard("Problem fetching repos");
   }
 }
-
 function createUserCard(user) {
   const userID = user.name || user.login;
   const userBio = user.bio ? `<p>${user.bio}</p>` : "";
   const cardHTML = `
-    <div class="card" style="margin-top: 2.5rem;">
-    <div>
-      <img src="${user.avatar_url}" alt="${user.name}" class="avatar">
+    <div class="card" style="margin-top: 2.5rem; transition: all 1s">
+      <div>
+        <img src="${user.avatar_url}" alt="${user.name}" class="avatar">
+      </div>
+      <div class="user-info">
+        <a href="${user.html_url}" target="_blank"><h2>${userID}</h2></a>
+        ${userBio}
+        <ul>
+          <li>${user.followers} <strong>Followers</strong></li>
+          <li>${user.following} <strong>Following</strong></li>
+          <li>${user.public_repos} <strong>Repos</strong></li>
+        </ul>
+        <div id="repos"></div>
+      </div>
     </div>
-    <div class="user-info">
-      <h2>${userID}</h2>
-      ${userBio}
-      <ul>
-        <li>${user.followers} <strong>Followers</strong></li>
-        <li>${user.following} <strong>Following</strong></li>
-        <li>${user.public_repos} <strong>Repos</strong></li>
-      </ul>
-
-      <div id="repos"></div>
-    </div>
-  </div>
-    `;
+  `;
   main.innerHTML = cardHTML;
 }
 
 function createErrorCard(msg) {
   const cardHTML = `
-        <div class="card" style="margin-top: 2.5rem;">
+        <div class="card" id="no-profile" style="margin-top: 2.5rem;">
             <h1 style="text-align: center;">${msg}</h1>
         </div>
     `;
