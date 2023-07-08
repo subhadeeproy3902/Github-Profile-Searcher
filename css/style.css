@@ -41,9 +41,9 @@ body {
   padding: 1rem;
   margin: 1rem;
   font-family: inherit;
-  box-shadow: 0 3px 10px #00ff4c69;
+  box-shadow: 0 3px 10px #2eaf64c2;
   font-size: var(--font-size-small);
-  background: #56b67d57;
+  background: #7e8ca457;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -59,7 +59,7 @@ body {
   font-size: clamp(1rem, 4vw, 1.5rem);
   border-radius: 1.8rem;
   cursor: pointer;
-  background: linear-gradient(to right, #1a573300, #1a74566c);
+  background: linear-gradient(to right, #1a573300, #2e79aa75);
   backdrop-filter: blur(90px);
   transition: all 0.3s ease;
 }
@@ -75,8 +75,8 @@ body {
 
 .user-form input:focus {
   outline: none;
-  background-color: #1a573360;
-  box-shadow: 0 0 15px #00a87093;
+  background-color: #141d3361;
+  box-shadow: 0 0 15px #e3eeebba;
 }
 
 .user-form input::placeholder {
