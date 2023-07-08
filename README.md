@@ -27,7 +27,7 @@ Run the index.html file after downloading the project or simply u can visit <a t
 
 This project would not have been possible without the efforts of the following people:
 - Subhadeep Roy &nbsp;[(@subhadeep3902)](https://github.com/subhadeep3902)
-- Anish Biswas &nbsp;[(@xeven777)](https://github.com/xeven777)
+- Anish Biswas &nbsp;[(@Xeven777)](https://github.com/xeven777)
 
 ## Where to contact ?
 Contact: [subha9.5roy350@gmail.com]
