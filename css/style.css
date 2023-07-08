@@ -28,43 +28,6 @@ body {
   --font-size-large: clamp(2rem, 5vw, 3rem);
 }
 
-/*@keyframes rotate {
-  from {
-    rotate: 0deg;
-  }
-
-  50% {
-    scale: 1 1.5;
-  }
-
-  to {
-    rotate: 360deg;
-  }
-}
-
-#blob {
-  background-color: white;
-  height: 30vmax;
-  aspect-ratio: 1;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: linear-gradient(to right, #4af390, #8c65e6, #f55050);
-  animation: rotate 20s infinite;
-  opacity: 0.65;
-  z-index: -2;
-}
-
-#blur {
-  height: 200%;
-  width: 100vw;
-  position: absolute;
-  z-index: -1;
-  backdrop-filter: blur(40vmax);
-}*/
-
 .user-form {
   position: relative;
 }
@@ -261,6 +224,9 @@ body {
 }
 
 @media (max-width: 420px) {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
   .light {
     display: none;
   }
@@ -363,4 +329,18 @@ footer p {
   transition: 0.1s;
   opacity: 0;
   z-index: -2;
+}
+
+::-webkit-scrollbar {
+  height: 0;
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #00122e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff6a;
+  border-radius: 10rem;
 }
