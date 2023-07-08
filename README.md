@@ -23,10 +23,11 @@ Run the index.html file after downloading the project or simply u can visit <a t
 - Deployed from VERCEL
 
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. 
+## Contributions
 
-Please make sure to update tests as appropriate.
+This project would not have been possible without the efforts of the following people:
+- Subhadeep Roy &nbsp;[(@subhadeep3902)](https://github.com/subhadeep3902)
+- Anish Biswas &nbsp;[(@xeven777)](https://github.com/xeven777)
 
 ## Where to contact ?
 Contact: [subha9.5roy350@gmail.com]
