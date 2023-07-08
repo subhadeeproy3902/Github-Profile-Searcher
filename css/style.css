@@ -4,14 +4,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@200;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide:wght@200;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Zen Dots:wght@200;400&display=swap");
+
 * {
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 body {
-  background-color: #1f242d;
+  background: linear-gradient(to right, #021d33, #020f46, #011635) center;
   color: #fff;
   font-family: "Kanit", sans-serif;
   display: flex;
@@ -20,11 +20,11 @@ body {
   justify-content: center;
   overflow-x: hidden;
   scroll-behavior: smooth;
+
 }
 
 :root {
   --font-size-small: clamp(0.9rem, 2vw, 1.1rem);
-  --font-size-medium: clamp(1.1rem, 3vw, 1.5rem);
   --font-size-large: clamp(2rem, 5vw, 3rem);
 }
 
@@ -45,38 +45,39 @@ body {
 
 #blob {
   background-color: white;
-  height: 34vmax;
+  height: 30vmax;
   aspect-ratio: 1;
   position: absolute;
   left: 50%;
   top: 50%;
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: linear-gradient(to right, #7fffea, #a766dd, #fffc60);
+  background: linear-gradient(to right, #4af390, #8c65e6, #f55050);
   animation: rotate 20s infinite;
   opacity: 0.65;
   z-index: -2;
 }
 
 #blur {
-  height: 250vh;
+  height: 200%;
   width: 100vw;
   position: absolute;
   z-index: -1;
-  backdrop-filter: blur(20vmax);
+  backdrop-filter: blur(40vmax);
 }
-.user-form{
+
+.user-form {
   position: relative;
 }
 
 .user-form input {
-  width: clamp(20rem,42vw,50rem);
+  width: clamp(20rem, 42vw, 50rem);
   display: block;
   border: none;
   border-radius: 2rem;
   color: #fff;
   padding: 1rem;
-  margin:1rem;
+  margin: 1rem;
   font-family: inherit;
   box-shadow: 0 3px 10px #29333294;
   font-size: var(--font-size-small);
@@ -84,9 +85,10 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
+
 #search-btn {
   position: absolute;
-  top:1rem; 
+  top: 1rem;
   right: 1rem;
   height: 3.5rem;
   width: 3.5rem;
@@ -95,8 +97,8 @@ body {
   font-size: clamp(1rem, 4vw, 1.5rem);
   border-radius: 1.8rem;
   cursor: pointer;
-  background:linear-gradient(to right,#1a573300,#1a74566c) ;
-  backdrop-filter: blur(100px);
+  background: linear-gradient(to right, #1a573300, #1a74566c);
+  backdrop-filter: blur(90px);
   transition: all 0.3s ease;
 }
 
@@ -110,6 +112,7 @@ body {
 #search-btn i {
   color: #cef5d7;
 }
+
 .user-form input:focus {
   outline: none;
   background-color: #1a573360;
@@ -120,14 +123,50 @@ body {
   color: #b6db9ec9;
 }
 
+
 .card {
   width: clamp(500px, 80vw, 860px);
   border-radius: 3rem;
   display: flex;
+  position: relative;
   padding: clamp(1rem, 3vw, 4rem);
-  margin: 0 2rem clamp(1rem, 5vw, 3rem);
-  background: #3049454d;
-  box-shadow: 0 0 20px #1d3b32c0;
+  top: 30px;
+  margin: 5rem;
+  background: #497a8d1a;
+  box-shadow: 0 0 20px #28473ec2;
+  transition: all 1s ease;
+}
+
+.card:hover {
+  animation-name: change;
+  animation-timing-function: ease-in-out;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes change {
+
+  0%,
+  100% {
+    box-shadow: 0 0 30px #4b87d4d7, 0 0 80px #4b87d4d7;
+  }
+
+  20%,
+  80% {
+    box-shadow: 0 0 30px #db438aea, 0 0 80px #db438aea;
+  }
+
+  35%,
+  65% {
+    box-shadow: 0 0 30px #4dcf63bd, 0 0 80px #4dcf63bd;
+  }
+
+  50% {
+    box-shadow: 0 0 30px #ebdb4be8, 0 0 80px #ebdb4be8;
+  }
 }
 
 .avatar {
@@ -136,32 +175,46 @@ body {
   box-shadow: 0 0 15px #00ffb3;
   height: clamp(100px, 20vw, 160px);
   width: clamp(100px, 20vw, 160px);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
-.avatar:hover{
+
+.avatar:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #00ffb381;
+  box-shadow: 0 0 10px #00ffdd81;
 }
+
 .user-info {
   color: #eee;
   margin-left: clamp(1rem, 2vw, 4vw);
   margin-right: clamp(1rem, 2vw, 4vw);
   flex: 1;
-  font-family: "Kanit"; 
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-family: "Kanit";
 
 }
 
-.user-info h2 {
+.user-info h2{
   margin-top: 0;
   margin-bottom: 10px;
   font-family: "Belanosima";
-    /* try Audiowide or Zen Dots */
+  /* try Audiowide or Zen Dots */
   text-transform: uppercase;
-  text-shadow:0 0 10px #2744338f;
+  color: white;
+  text-shadow: 0 0 10px #2744338f;
   letter-spacing: clamp(1px, 2vw, 2px);
   font-size: var(--font-size-large);
+  transition: all 0.2s ease-in-out;
 }
 
+.user-info a{
+  text-decoration: none; 
+}
+
+.user-info a:hover h2{
+  color: #dcf3ec;
+  text-shadow: 0 0 20px #c8fcec;
+  transform:translateY(-5%);
+}
 .user-info ul {
   list-style-type: none;
   display: flex;
@@ -185,12 +238,12 @@ body {
 .repo {
   text-decoration: none;
   color: #fff;
-  background-color: #292e33;
+  background-color: #31425ce0;
   font-size: var(--font-size-small);
   padding: 0.25rem 0.7rem;
-  margin:10px 7px 0 1px;
+  margin: 10px 9px 0 1px;
   display: inline-block;
-  border:1px solid #00a87021;
+  border: 1px solid #0d4935ad;
   letter-spacing: clamp(0.4px, 1vw, 0.8px);
   border-radius: 0.8em;
   transition: all 0.2s ease-in-out;
@@ -202,7 +255,7 @@ body {
   transform: translateY(-5%);
 }
 
-@media (max-width: 470px) {
+@media (max-width: 480px) {
   .card {
     flex-direction: column;
     align-items: center;
@@ -261,7 +314,7 @@ footer {
 
 footer p {
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.3vw, 1.5rem);
   color: #fff;
   text-align: center;
 }
