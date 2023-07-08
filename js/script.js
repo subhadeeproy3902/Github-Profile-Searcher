@@ -1,30 +1,3 @@
-const blob = document.getElementById("blob");
-const delaytime = 3000;
-// change for delay speed
-
-function updateBlob() {
-  const screenWidth = window.innerWidth;
-
-  if (screenWidth <= 500) {
-    blob.style.display = "none"; // hide blob on screens smaller than 500px or if clientY > 85% of screen height
-  } else {
-    blob.style.display = "block"; // show blob on larger screens
-  }
-}
-
-window.addEventListener("resize", updateBlob);
-updateBlob();
-
-window.onpointermove = event => {
-  const { clientX, clientY } = event;
-
-  if (clientY <= 0.85 * window.innerHeight) { // limit movement if clientY > 85% of screen height
-    blob.animate({
-      left: `${clientX}px`,
-      top: `${clientY}px`
-    }, { duration: delaytime, fill: "forwards" });
-  }
-};
 const APIURL = "https://api.github.com/users/";
 
 const main = document.getElementById("main");
@@ -57,7 +30,7 @@ function createUserCard(user) {
   const userID = user.name || user.login;
   const userBio = user.bio ? `<p>${user.bio}</p>` : "";
   const cardHTML = `
-    <div class="card" style="margin-top: 2.5rem;">
+    <div class="card" style="margin-top: 2.5rem; transition: all 1s">
       <div>
         <img src="${user.avatar_url}" alt="${user.name}" class="avatar">
       </div>
@@ -78,7 +51,7 @@ function createUserCard(user) {
 
 function createErrorCard(msg) {
   const cardHTML = `
-        <div class="card" style="margin-top: 2.5rem;">
+        <div class="card" id="no-profile" style="margin-top: 2.5rem;">
             <h1 style="text-align: center;">${msg}</h1>
         </div>
     `;

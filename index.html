@@ -12,8 +12,17 @@
 </head>
 
 <body>
-        <div id="blob"></div>
-        <div id="blur"></div>
+        <div class="light"></div>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script>
+                $(document).on('mousemove', function (e) {
+                        $('.light').css({
+                                opacity: 1,
+                                left: e.pageX - 600,
+                                top: e.pageY - 600,
+                        });
+                });
+        </script>
 
 
         <div class="logo"><img id="image" src="./css/logo.png" alt="https://i.postimg.cc/mkBMRDnB/Github.jpg"></div>

@@ -11,7 +11,7 @@
 }
 
 body {
-  background: linear-gradient(to right, #021d33, #020f46, #011635) center;
+  background: linear-gradient(to right, #001627, #001053, #00122e) center;
   color: #fff;
   font-family: "Kanit", sans-serif;
   display: flex;
@@ -19,8 +19,8 @@ body {
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
+  min-height: 100vh;
   scroll-behavior: smooth;
-
 }
 
 :root {
@@ -28,8 +28,7 @@ body {
   --font-size-large: clamp(2rem, 5vw, 3rem);
 }
 
-
-@keyframes rotate {
+/*@keyframes rotate {
   from {
     rotate: 0deg;
   }
@@ -64,7 +63,7 @@ body {
   position: absolute;
   z-index: -1;
   backdrop-filter: blur(40vmax);
-}
+}*/
 
 .user-form {
   position: relative;
@@ -79,9 +78,9 @@ body {
   padding: 1rem;
   margin: 1rem;
   font-family: inherit;
-  box-shadow: 0 3px 10px #29333294;
+  box-shadow: 0 3px 10px #00ff4c69;
   font-size: var(--font-size-small);
-  background: #1a573357;
+  background: #56b67d57;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -105,9 +104,7 @@ body {
 #search-btn:hover {
   box-shadow: 0 0 10px #74eed3ab;
   transform: rotate(20deg);
-
 }
-
 
 #search-btn i {
   color: #cef5d7;
@@ -123,18 +120,21 @@ body {
   color: #b6db9ec9;
 }
 
-
 .card {
   width: clamp(500px, 80vw, 860px);
   border-radius: 3rem;
+  padding-bottom: 3rem;
   display: flex;
   position: relative;
-  padding: clamp(1rem, 3vw, 4rem);
+  padding: clamp(1.5rem, 3vw, 4rem);
   top: 30px;
-  margin: 5rem;
-  background: #497a8d1a;
-  box-shadow: 0 0 20px #28473ec2;
-  transition: all 1s ease;
+  margin: 2.5rem;
+  background: #00b8ff1a;
+  box-shadow: 0 0 20px #669688c2;
+}
+
+#no-profile {
+  display: block;
 }
 
 .card:hover {
@@ -144,11 +144,9 @@ body {
   animation-fill-mode: both;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-
 }
 
 @keyframes change {
-
   0%,
   100% {
     box-shadow: 0 0 30px #4b87d4d7, 0 0 80px #4b87d4d7;
@@ -172,7 +170,7 @@ body {
 .avatar {
   border-radius: 50%;
   margin: 1rem;
-  box-shadow: 0 0 15px #00ffb3;
+  box-shadow: 0 0 18px #00ffb3;
   height: clamp(100px, 20vw, 160px);
   width: clamp(100px, 20vw, 160px);
   transition: all 0.3s ease-in-out;
@@ -190,10 +188,9 @@ body {
   flex: 1;
   font-size: clamp(1rem, 1.5vw, 2rem);
   font-family: "Kanit";
-
 }
 
-.user-info h2{
+.user-info h2 {
   margin-top: 0;
   margin-bottom: 10px;
   font-family: "Belanosima";
@@ -206,14 +203,14 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.user-info a{
-  text-decoration: none; 
+.user-info a {
+  text-decoration: none;
 }
 
-.user-info a:hover h2{
+.user-info a:hover h2 {
   color: #dcf3ec;
   text-shadow: 0 0 20px #c8fcec;
-  transform:translateY(-5%);
+  transform: translateY(-5%);
 }
 .user-info ul {
   list-style-type: none;
@@ -221,6 +218,7 @@ body {
   justify-content: space-between;
   padding: 0;
   max-width: 400px;
+  margin-top: 1rem;
   margin-bottom: clamp(0.5rem, 2vw, 1.1rem);
 }
 
@@ -255,11 +253,30 @@ body {
   transform: translateY(-5%);
 }
 
-@media (max-width: 480px) {
+#main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 420px) {
+  .light {
+    display: none;
+  }
+  .card {
+    animation-name: change;
+    animation-timing-function: ease-in-out;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
   .card {
     flex-direction: column;
     align-items: center;
     max-width: 350px;
+    padding-bottom: 3rem;
   }
 
   .user-form {
@@ -267,7 +284,7 @@ body {
   }
 
   #image {
-    height: 200px;
+    height: 220px;
   }
 
   .avatar {
@@ -300,7 +317,7 @@ body {
 }
 
 .logo img {
-  height: 300px;
+  height: 320px;
 }
 
 /*Footer ------------------------------------------------------------*/
@@ -331,4 +348,19 @@ footer p {
 
 .bx {
   color: #1cfc79;
+}
+
+.light {
+  position: fixed;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(
+    rgb(70 248 255 / 12%) 0%,
+    rgb(0 206 232 / 0%) 70%
+  );
+  border-radius: 60%;
+  pointer-events: none;
+  transition: 0.1s;
+  opacity: 0;
+  z-index: -2;
 }
