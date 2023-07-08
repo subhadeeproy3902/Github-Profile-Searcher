@@ -2,14 +2,29 @@ const blob = document.getElementById("blob");
 const delaytime = 3000;
 // change for delay speed
 
+function updateBlob() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth <= 500) {
+    blob.style.display = "none"; // hide blob on screens smaller than 500px or if clientY > 85% of screen height
+  } else {
+    blob.style.display = "block"; // show blob on larger screens
+  }
+}
+
+window.addEventListener("resize", updateBlob);
+updateBlob();
+
 window.onpointermove = event => {
   const { clientX, clientY } = event;
 
-  blob.animate({
-    left: `${clientX}px`,
-    top: `${clientY}px`
-  }, { duration: delaytime, fill: "forwards" });
-}
+  if (clientY <= 0.85 * window.innerHeight) { // limit movement if clientY > 85% of screen height
+    blob.animate({
+      left: `${clientX}px`,
+      top: `${clientY}px`
+    }, { duration: delaytime, fill: "forwards" });
+  }
+};
 const APIURL = "https://api.github.com/users/";
 
 const main = document.getElementById("main");
@@ -38,28 +53,26 @@ async function getRepos(username) {
     createErrorCard("Problem fetching repos");
   }
 }
-
 function createUserCard(user) {
   const userID = user.name || user.login;
   const userBio = user.bio ? `<p>${user.bio}</p>` : "";
   const cardHTML = `
     <div class="card" style="margin-top: 2.5rem;">
-    <div>
-      <img src="${user.avatar_url}" alt="${user.name}" class="avatar">
+      <div>
+        <img src="${user.avatar_url}" alt="${user.name}" class="avatar">
+      </div>
+      <div class="user-info">
+        <a href="${user.html_url}" target="_blank"><h2>${userID}</h2></a>
+        ${userBio}
+        <ul>
+          <li>${user.followers} <strong>Followers</strong></li>
+          <li>${user.following} <strong>Following</strong></li>
+          <li>${user.public_repos} <strong>Repos</strong></li>
+        </ul>
+        <div id="repos"></div>
+      </div>
     </div>
-    <div class="user-info">
-      <h2>${userID}</h2>
-      ${userBio}
-      <ul>
-        <li>${user.followers} <strong>Followers</strong></li>
-        <li>${user.following} <strong>Following</strong></li>
-        <li>${user.public_repos} <strong>Repos</strong></li>
-      </ul>
-
-      <div id="repos"></div>
-    </div>
-  </div>
-    `;
+  `;
   main.innerHTML = cardHTML;
 }
 
