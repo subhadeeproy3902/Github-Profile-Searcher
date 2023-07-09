@@ -37,6 +37,10 @@ function createUserCard(user) {
       <div class="user-info">
         <a href="${user.html_url}" target="_blank"><h2>${userID}</h2></a>
         ${userBio}
+
+        <a id="site-link" class="repo" href="${user.blog}" target="_blank" style="margin-top: 1.2rem;
+        margin-bottom: 0.4rem;">${user.blog}</a>
+
         <ul>
           <li>${user.followers} <strong>Followers</strong></li>
           <li>${user.following} <strong>Following</strong></li>
@@ -47,6 +51,10 @@ function createUserCard(user) {
     </div>
   `;
   main.innerHTML = cardHTML;
+  const blogLink = document.getElementById("site-link");
+  if (user.blog === "") {
+    blogLink.style.display = "none";
+  }
 }
 
 function createErrorCard(msg) {
