@@ -344,3 +344,7 @@ footer p {
   background: #00ff6a;
   border-radius: 10rem;
 }
+
+#site-link:hover {
+  color: #00ff6a;
+}
